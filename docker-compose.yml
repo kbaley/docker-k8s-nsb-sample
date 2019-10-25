@@ -1,0 +1,18 @@
+version: "2.3"
+services:   
+    sender:
+        image: kbaley/sender
+        build:
+            context: .
+            dockerfile: ./Sender/Dockerfile
+        networks:
+            - new
+    receiver:
+        image: kbaley/receiver
+        build:
+            context: .
+            dockerfile: ./Receiver/Dockerfile
+        networks:
+            - new
+networks:
+    new:
